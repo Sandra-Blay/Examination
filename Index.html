@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Dream House</title>
+    <!-- Load A-Frame Library -->
+    <script src="script/aframe-min.js"></script>
+    <script src="script/aframe.js"></script>
+    <script src="script/ada-water.js"></script>
+    <script src="script/ada-water.js"></script>
+
+</head>
+<body>
+    <a-scene>
+        <!-- Asset Management System -->
+        <a-assets>
+            <!-- Textures -->
+            <img src="textures/clear-sunny-sky.jpg" id="skyTexture">
+            <img src="textures/grass (2).jpg"  alt="" id="floor">
+            
+            <!-- 3D Model -->
+          
+            <a-asset-item id="lightpole" src="model/light1/scene.gltf"></a-asset-item>
+          
+
+            <a-asset-item id="house4" src="model/bali_villa_-_modern_house_with_pool_-_2_bedroom/scene.gltf"></a-asset-item>
+            
+            <a-asset-item id="car" src="model/ferrari_gtc4_lusso/scene.gltf"></a-asset-item>
+
+
+
+
+        </a-assets>
+
+        <!-- Sky -->
+        <a-sky src="#skyTexture" rotation="0 -100 0" radius="10000"></a-sky>
+
+        <!-- Ground -->
+        <a-plane material="color: #ffffff;
+                          src: #floor;
+                          normal-map: #floor;
+                          normal-texture-repeat: 50000 50000;
+                          repeat:50 50"
+                rotation="-90 0 0"
+                position="0 -0.15 0"
+                scale="1000 1000 1">
+        </a-plane>
+
+        <!-- Camera -->
+        <a-entity position="60 15 100">
+            <a-camera position=""></a-camera>
+        </a-entity>
+
+        <a-entity rotation="0 -90 0">
+
+            <!--House-->
+            <a-entity gltf-model="#house4"
+                      position="-15 -6.5 -5"
+                      rotation="0 0 0"
+                      scale="0.09 0.09 0.09">
+            </a-entity>
+
+            <!--Pool-->
+        <a-water
+            opacity=".7"
+            scale="1.8 4.6 4"
+            color="skyblue"
+            rotation="-90 0 0"
+            position="40.25 0.3 -47"
+          >
+          </a-water>
+
+                    
+            <!--Light-->
+            <a-entity gltf-model="#lightpole"
+            position="50 0.0001 -17"
+            rotation="0 -90 0"
+            scale=".06 .05 .06">
+        
+            </a-entity>
+
+
+            <!--car-->
+            <a-entity gltf-model="#car"
+                                position="80 0 -75"
+                                rotation="0 90 0"
+                                scale="1 1 1">
+                        </a-entity>
+
+
+                       
+
+ 
+    </a-entity>
+
+
+
+    
+  </a-scene>
+</body>
+</html>
